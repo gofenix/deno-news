@@ -4,7 +4,7 @@ import Counter from "../islands/Counter.tsx";
 export default function Home() {
   const count = useSignal(3);
   return (
-    <>
+    <div data-theme="light">
       <div class="mockup-browser border border-base-300">
         <div class="mockup-browser-toolbar">
           <div class="input border border-base-300">https://daisyui.com</div>
@@ -29,6 +29,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

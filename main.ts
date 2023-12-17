@@ -10,8 +10,8 @@ import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import config from "./fresh.config.ts";
 
-await start(manifest, config);
-
 Deno.cron("Run once a minute", "* * * * *", () => {
   console.log("Hello, cron!");
 });
+
+await start(manifest, config);

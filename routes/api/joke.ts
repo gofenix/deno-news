@@ -15,8 +15,6 @@ const JOKES = [
   "An SEO expert walked into a bar, pub, inn, tavern, hostelry, public house.",
 ];
 
-
-
 export const handler = async (_req: Request, _ctx: FreshContext): Response => {
   const kv = await Deno.openKv();
 

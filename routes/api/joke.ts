@@ -1,4 +1,5 @@
 import { FreshContext } from "$fresh/server.ts";
+import dayjs from "dayjs";
 
 // Jokes courtesy of https://punsandoneliners.com/randomness/programmer-jokes/
 const JOKES = [
@@ -20,13 +21,14 @@ const kv = await Deno.openKv(
 
 export const handler = async (_req: Request, _ctx: FreshContext): Response => {
   const prefs = {
+    now: dayjs().format("{YYYY} MM-DDTHH:mm:ss SSS [Z] A"),
     username: "ada",
     theme: "dark",
     language: "en-US",
   };
-  const result = await kv.set(["preferences", "joke"], prefs);
+  const result = await kv.set(["joke"], prefs);
   console.log(result);
-  const entry = await kv.get(["preferences", "ada"]);
+  const entry = await kv.get(["joke"]);
   console.log(entry.key);
   console.log(entry.value);
   console.log(entry.versionstamp);

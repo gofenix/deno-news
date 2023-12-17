@@ -22,7 +22,8 @@
     "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
     "@tailwindcss/typography": "npm:@tailwindcss/typography",
     "$std/": "https://deno.land/std@0.208.0/",
-    "daisyui": "npm:daisyui@latest"
+    "daisyui": "npm:daisyui@latest",
+    "dayjs": "npm:dayjs"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "nodeModulesDir": true

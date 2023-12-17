@@ -18,9 +18,7 @@ const JOKES = [
 
 
 export const handler = async (_req: Request, _ctx: FreshContext): Response => {
-  const kv = await Deno.openKv(
-    "https://api.deno.com/databases/60a4d8ba-1b6e-4a78-a27f-d53b3246f808/connect",
-  );
+  const kv = await Deno.openKv();
 
   const prefs = {
     now: dayjs().format("{YYYY} MM-DDTHH:mm:ss SSS [Z] A"),

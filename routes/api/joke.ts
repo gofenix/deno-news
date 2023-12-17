@@ -14,7 +14,23 @@ const JOKES = [
   "An SEO expert walked into a bar, pub, inn, tavern, hostelry, public house.",
 ];
 
-export const handler = (_req: Request, _ctx: FreshContext): Response => {
+const kv = await Deno.openKv(
+  "https://api.deno.com/databases/60a4d8ba-1b6e-4a78-a27f-d53b3246f808/connect",
+);
+
+export const handler = async (_req: Request, _ctx: FreshContext): Response => {
+  const prefs = {
+    username: "ada",
+    theme: "dark",
+    language: "en-US",
+  };
+  const result = await kv.set(["preferences", "joke"], prefs);
+  console.log(result);
+  const entry = await kv.get(["preferences", "ada"]);
+  console.log(entry.key);
+  console.log(entry.value);
+  console.log(entry.versionstamp);
+
   const randomIndex = Math.floor(Math.random() * JOKES.length);
   const body = JOKES[randomIndex];
   return new Response(body);

@@ -10,9 +10,13 @@ import * as $api_joke from "./routes/api/joke.ts";
 import * as $countdown from "./routes/countdown.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $l_id_ from "./routes/l/[id].tsx";
+import * as $link from "./routes/link.tsx";
 import * as $search from "./routes/search.tsx";
 import * as $Countdown from "./islands/Countdown.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $LinkCard from "./islands/LinkCard.tsx";
+import * as $LinkMaker from "./islands/LinkMaker.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -25,11 +29,15 @@ const manifest = {
     "./routes/countdown.tsx": $countdown,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/l/[id].tsx": $l_id_,
+    "./routes/link.tsx": $link,
     "./routes/search.tsx": $search,
   },
   islands: {
     "./islands/Countdown.tsx": $Countdown,
     "./islands/Counter.tsx": $Counter,
+    "./islands/LinkCard.tsx": $LinkCard,
+    "./islands/LinkMaker.tsx": $LinkMaker,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

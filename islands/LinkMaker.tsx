@@ -67,8 +67,8 @@ export default function LinkMaker() {
   return (
     <>
       <p class="my-4 text-center  text-base text-gray-500">
-        This is a link maker, you can input your bodhi article id and get a card-style
-        preview.
+        This is a link maker, you can input your bodhi article id and get a
+        card-style preview.
       </p>
       <div class="flex flex-col items-center justify-start">
         <Input

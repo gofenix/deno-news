@@ -28,7 +28,7 @@ interface MenuItem {
 function genEmbedCode(link: Link) {
   const id = link.title;
 
-  return `<iframe style="width:100%;height:100%;min-width:256px;" src="https://link-maker.deno.dev/l/${id}" frameBorder="0"></iframe>`;
+  return `<iframe style="width:100%;height:100%;min-width:256px;" src="https://deno-news.deno.dev/l/${id}" frameBorder="0"></iframe>`;
 }
 
 export default function LinkCard(
